@@ -10,16 +10,15 @@ import Home from './components/pages/Home';
 import NotFound from './components/pages/NotFound';
 import './App.css';
 
+console.log(process.env);
 const App = () =>
 {
-	const name = 'Mike';
-
   	return (
 		<GithubState>
+		{process.env.REACT_APP_GITHUB_CLIENT_ID}
 		<AlertState>
 		<Router>
 		<div className='App'>
-			<h1>Hi {name}</h1>
 			<Navbar />
 			<div className='container'>
 				<Alert />
@@ -30,7 +29,6 @@ const App = () =>
 					<Route component={NotFound} />
 				</Switch>
 			</div>
-			<h2>Fuck Off</h2>
 		</div>
 		</Router>
 		</AlertState>
